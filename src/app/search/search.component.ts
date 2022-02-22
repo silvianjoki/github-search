@@ -25,6 +25,19 @@ export class SearchComponent implements OnInit {
     })
   }
 
+  findUser() {
+    this.userfinderservice.userUpdate(this.user)
+    this.userfinderservice.findUser().subscribe(user => {
+      this.user = user
+      console.log(user)
+    })
+    this.userfinderservice.repoUpdate(this.repos)
+    this.userfinderservice.findRepo().subscribe(repos=> {
+      this.repos = repos
+      console.log(repos )
+    })
+  }
+
   
 
   ngOnInit(): void {

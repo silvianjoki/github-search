@@ -1,3 +1,5 @@
+
+
 <div class="container-fluid">
     <h2 class="text-center"> {{user.login}} </h2>
     <div class="media">
@@ -6,12 +8,12 @@
             <mat-tab-group dynamicHeight>
                 <mat-tab label="Profile Information">
                     <div class="tabContent profileInformation">
-                        <p *ngIf="user.username"><span>Name:</span>$nbsp; {{user.username}}</p>> -->
+                        <p *ngIf="user.username"><span>Name:</span>$nbsp; {{user.username}}</p>
                         <p *ngIf="user.login"><span>Username:</span>&nbsp; {{user.login}} </p>
-                        <p> <span>Followers:</span> &nbsp; "{{user.followers }}" </p>
-                        <p> <span>Following:</span> &nbsp; "{{user.following}}" </p>
-                        <p *ngIf="user.bio"><span>Bio:</span> {{user.bio}}  </p> -->
-                        <p *ngIf="user.created_at"><span>Created at</span> &nbsp; "{{user.created_at}}"&nbsp;:(datecount) day(s) ago.</p>
+                        <p> <span>Followers:</span> &nbsp; {{user.followers }}</p>
+                        <p> <span>Following:</span> &nbsp; {{user.following}} </p>
+                        <p *ngIf="user.bio"><span>Bio:</span> {{user.bio}}  </p> 
+                        <p *ngIf="user.created_at"><span>Created at</span> &nbsp; {{user.created_at}}</p>
                     </div>
                 </mat-tab>
                 <mat-tab label="Repositories">
