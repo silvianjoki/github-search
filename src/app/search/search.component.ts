@@ -38,6 +38,14 @@ export class SearchComponent implements OnInit {
     })
   }
 
+  fetchRepo() {
+    this.userfinderservice.repoUpdate(this.repos)
+    this.userfinderservice.fetchRepo().subscribe(repos => {
+      this.repos = repos
+      console.log(repos)
+    })
+  }
+
   
 
   ngOnInit(): void {

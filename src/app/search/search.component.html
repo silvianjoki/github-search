@@ -1,4 +1,33 @@
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg2">
+    <div style='font-size: 1.5rem'>
+        <a class="navbar-brand" href="#">Github
+            <img src='../../../assets/images/GitHub-Mark-Light-32px.png' alt="" width="30"  
+            class="d-inline-block align-text-top"> Search
+        </a>
+    </div>
+    <div class="Links"> 
+        <form #userForm = 'ngForm'>
+            <input type="text" class="form-control" placeholder="find user" [(ngModel)]="user" name="username" 
+                style="background-color: transparent; color: white;">
+            <div class="input-group-append"> <span>
+                <button class="btn btn-light " type="button" routerLink="/search" routerLinkActive="activeRoute"
+                    (click)="findUser(); userForm.reset()">
+                </button> </span>
+            </div>
+        </form>
+    </div>
+    &nbsp;
+    <form #repoForm = 'ngForm'>
+        <input type="text" class="form-control" placeholder="find repo" [(ngModel)]="repos" name="reponame" 
+            style="background-color: transparent; color: white;">
+        <div class="input-group-append">
+            <button class="btn  btn-light" type="button"  routerLink="/search" routerLinkActive="activeRoute"
+                (click)="fetchRepo(); repoForm.reset()" >
+            </button>
+        </div>
 
+    </form>
+</nav>
 
 <div class="container-fluid">
     <h2 class="text-center"> {{user.login}} </h2>
