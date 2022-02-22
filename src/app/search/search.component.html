@@ -32,6 +32,15 @@
 <div class="overlay">
     <div class="container-fluid">
         <br>
+        <div class="headline text-center">
+            <div class="content">
+                <div style='font-size:7rem;'>github<span>
+                    <img width='83' alt='Angular Logo' src='../../../assets/images/GitHub-Mark-Light-120px-plus.png' style="padding-bottom: 2%;"></span>search</div> <br> <br>
+                <h1>Find your Github Profile!</h1>
+                <h4>Find Github users and their Repositories.</h4>
+            </div>
+            <br>
+        </div>
         <h2 class="text-center"> {{user.login}} </h2>
         <div class="media">
             <img [src]= "user.avatar_url" class='ratio img-responsive img-circle'>
@@ -44,7 +53,7 @@
                             <p> <span>Followers:</span> &nbsp; {{user.followers }}</p>
                             <p> <span>Following:</span> &nbsp; {{user.following}} </p>
                             <p *ngIf="user.bio"><span>Bio:</span> {{user.bio}}  </p> 
-                            <p *ngIf="user.created_at"><span>Created at</span> &nbsp; {{user.created_at}}</p>
+                            <p *ngIf="user.created_at"><span>Created: </span> &nbsp; {{user.created_at | datecount }}</p>
                         </div>
                     </mat-tab>
                     <mat-tab label="Repositories">
@@ -56,7 +65,7 @@
                                     </div> 
                                     <p class="card-information" *ngIf="repo.description"> {{repo.description}} </p>
                                     <p class="card-information" *ngIf="!repo.description"> Nothing to see here. </p>
-                                    <small> Previously updated on "{{repo.updated_at | date}}" </small>
+                                    <small> Previously updated on "{{repo.updated_at | date }}" </small>
                                     <div class="card-lower">
                                         <div *ngIf="repo.language"> {{repo.language}} </div> &nbsp;&nbsp;
                                         <div *ngIf="!repo.language"> notshared </div> &nbsp; &nbsp;

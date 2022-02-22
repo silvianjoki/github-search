@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { UserfinderService } from '../userfinder.service';
+import { DatecountPipe } from '../datecount.pipe';
 
 @Component({
   selector: 'app-search',
