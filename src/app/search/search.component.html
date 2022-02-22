@@ -1,1 +1,40 @@
-<p>search works!</p>
+<div class="container-fluid">
+    <h2 class="text-center"> {{user.login}} </h2>
+    <div class="media">
+        <img [src]= "user.avatar_url" class='ratio img-responsive img-circle'>
+        <!-- <img src= "{{ profile.avatar_url }}" class='ratio img-responsive img-circle'> -->
+        <div class="media-info">
+            <mat-tab-group dynamicHeight>
+                <mat-tab label="Profile Information">
+                    <div class="tabContent profileInformation">
+                        <p *ngIf="user.username"><span>Name:</span>$nbsp; {{user.username}}</p>> -->
+                        <p *ngIf="user.login"><span>Username:</span>&nbsp; {{user.login}} </p>
+                        <p> <span>Followers:</span> &nbsp; "{{user.followers }}" </p>
+                        <p> <span>Following:</span> &nbsp; "{{user.following}}" </p>
+                        <p *ngIf="user.bio"><span>Bio:</span> {{user.bio}}  </p> -->
+                        <p *ngIf="user.created_at"><span>Created at</span> &nbsp; "{{user.created_at}}"&nbsp;:(datecount) day(s) ago.</p>
+                    </div>
+                </mat-tab>
+                <mat-tab label="Repositories">
+                    <div class="taContent Repositories">
+                        <div class="card" *ngFor="let repo of repos ">
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <a href= "{{ repo.html_url }}" appVisitedrepo > {{repo.name | titlecase}} </a>     
+                                </div> 
+                                <p class="card-information" *ngIf="repo.description"> {{repo.description}} </p>
+                                <p class="card-information" *ngIf="!repo.description"> Nothing to see here. </p>
+                                <small> Previously updated on "{{repo.updated_at | date}}" </small>
+                                <div class="card-lower">
+                                    <div *ngIf="repo.language"> {{repo.language}} </div> &nbsp;&nbsp;
+                                    <div *ngIf="!repo.language"> notshared </div> &nbsp; &nbsp;
+                                </div>
+                                <i class="fa-solid fa-code-branch"></i>Forks: &nbsp; "{{repo.forks}}"                               
+                            </div>
+                        </div>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</div>

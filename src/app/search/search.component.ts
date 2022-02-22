@@ -21,7 +21,7 @@ export class SearchComponent implements OnInit {
 
     this.userfinderservice.findRepo().subscribe (repos=> {
       console.log(repos);
-      this.repos= reposg
+      this.repos= repos
     })
   }
 
