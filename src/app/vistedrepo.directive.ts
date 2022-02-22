@@ -1,10 +1,14 @@
-import { Directive } from '@angular/core';
+import { Directive, HostListener, ElementRef } from '@angular/core';
 
 @Directive({
   selector: '[appVistedrepo]'
 })
 export class VistedrepoDirective {
 
-  constructor() { }
+  constructor(private elem: ElementRef) {
+
+    this.elem.nativeElement.style.backgroundColor = 'black';
+  
+  }
 
 }
