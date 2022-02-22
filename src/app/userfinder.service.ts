@@ -18,6 +18,14 @@ export class UserfinderService {
   findUser() {
     interface ApiResponse {
       login:string
+      username: string
+      bio:string
+      followers:any
+      following:any
+      public_repos:any
+      avatar_url:any
+      created_at:anyg
+
     }
     return this.http.get('https://api.github.com/users/' + this.username + '?client_id=' + this.clientid + '&client_secret=' + this.clientsecret)
   } 
@@ -26,5 +34,13 @@ export class UserfinderService {
   }
   fetchRepo() {
     return this.http.get('https://api.github.com/search/repositories?q=' + this.repo + '?client_id=' + this.clientid + '&client_secret=' + this.clientsecret)
+  }
+
+  userUpdate(username:string) {
+    this.username = username;
+  }
+
+  repoUpdate(repo:string) {
+    this.repo= repo;
   }
 }
