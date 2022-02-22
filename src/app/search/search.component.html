@@ -1,28 +1,27 @@
 
 <nav class="navbar navbar-dark bg-dark navbar-expand-lg2">
     <div style='font-size: 1.5rem'>
-        <a class="navbar-brand" href="#">Github
-            <img src='src/assets/images/GitHub-Mark-Light-32px.png' class="d-inline-block align-text-top"> Search
+        <a class="navbar-brand" href="#">Github Search
         </a>
     </div>
     <div class="Links"> 
         <form #userForm = 'ngForm'>
-            <input type="text" class="form-control" placeholder="find user"  [(ngModel)]="user" name="username" 
-                style="background-color: transparent; color: white;">
-            <div class="input-group-append"> <span>
-                <button class="btn btn-light " type="button" routerLink="/search" routerLinkActive="activeRoute"
-                    (click)="findUser(); userForm.reset()">
-                </button> </span>
+            <div>
+            <input type="text" id="findUser" class="form-control" [(ngModel)]="user" name="findUser" 
+                style="background-color: transparent; color: lightcyan;">
+                <button class="btn btn-dark btn-sm " type="button" routerLink="/search" routerLinkActive="activeRoute"
+                    (click)="findUser(); userForm.reset({})"> check user
+                </button>
             </div>
         </form>
     </div>
     &nbsp;
     <form #repoForm = 'ngForm'>
         <input type="text" class="form-control" placeholder="find repo" [(ngModel)]="repos" name="reponame" 
-            style="background-color: transparent; color: white;">
-        <div class="input-group-append">
-            <button class="btn  btn-light" type="button"  routerLink="/search" routerLinkActive="activeRoute"
-                (click)="fetchRepo(); repoForm.reset()" >
+            style="background-color: transparent; color: lightcyan;">
+        <div class="input-group">
+            <button class="btn  btn-dark btn-sm" type="button"  routerLink="/search" routerLinkActive="activeRoute"
+                (click)="fetchRepo(); repoForm.reset()" > check repo
             </button>
         </div>
     </form>
@@ -31,11 +30,13 @@
 
 <div class="overlay">
     <div class="container-fluid">
-        <br> <br>
+        <br> <br> <br>
         <div class="headline text-center">
             <div class="content">
                 <div style='font-size:7rem;'>github<span>
-                    <img width='83' alt='Angular Logo' src='src/assets/images/GitHub-Mark-Light-120px-plus.png' style="padding-bottom: 2%;"></span>search</div> <br> <br>
+                    <!-- <img width='83' alt='Angular Logo'  -->
+                    <!-- src='src/assets/images/GitHub-Mark-Light-120px-plus.png' style="padding-bottom: 2%;"> -->
+                </span>search</div> <br> <br>
                 <h1>Find your Github Profile!</h1>
                 <h4>Find Github users and their Repositories.</h4>
             </div>
@@ -57,7 +58,7 @@
                         </div>
                     </mat-tab>
                     <mat-tab label="Repositories">
-                        <div class="taContent Repositories">
+                        <div class="cards">
                             <div class="card" *ngFor="let repo of repos ">
                                 <div class="card-body">
                                     <div class="card-title">

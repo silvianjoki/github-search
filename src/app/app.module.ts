@@ -13,12 +13,14 @@ import { DatecountPipe } from './datecount.pipe';
 import { VistedrepoDirective } from './vistedrepo.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
     DatecountPipe,
-    VistedrepoDirective
+    VistedrepoDirective,
+
   ],
   imports: [
     BrowserModule,
