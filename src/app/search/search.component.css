@@ -8,6 +8,18 @@
     height: 2000px;
 }
 
+.me-2{
+    margin-left: 30%;
+    align-items: right;
+    
+}
+
+.nav{
+    width: 100%;
+    padding: 0%;
+    font-family: 'The Nautigal';
+    margin-bottom: 15%;
+}
 
 
 .example-small-box, .example-large-box {
@@ -39,8 +51,8 @@ h2 {
 }
 
 .tabcontent {
-  align-items: center;
-  justify-content: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .media img {
