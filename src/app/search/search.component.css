@@ -1,8 +1,10 @@
-* {
-    background-image: url(/src/assets/images/sth.jpeg);
+
+.overlay {
+    background-image: url(src/assets/images/lun.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    height: 100%;
 }
 
 
