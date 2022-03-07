@@ -8,7 +8,7 @@
         <form #userForm = 'ngForm'>
             <div>
             <input type="text" id="findUser" class="form-control" [(ngModel)]="user" name="findUser" 
-                style="background-color: transparent; color: lightcyan;">
+                style="background-color: transparent; color: lightcyan;" placeholder="add user">
                 <button class="btn btn-dark btn-sm " type="button" routerLink="/search" routerLinkActive="activeRoute"
                     (click)="findUser(); userForm.reset({})"> check user
                 </button>
@@ -18,7 +18,7 @@
     &nbsp;
     <form #repoForm = 'ngForm'>
         <input type="text" class="form-control" placeholder="find repo" [(ngModel)]="repos" name="reponame" 
-            style="background-color: transparent; color: lightcyan;">
+            style="background-color: transparent; color: lightcyan;" placeholder="add user"g>
         <div class="input-group">
             <button class="btn  btn-dark btn-sm" type="button"  routerLink="/search" routerLinkActive="activeRoute"
                 (click)="fetchRepo(); repoForm.reset()" > check repo
@@ -33,7 +33,7 @@
         <br> <br> <br>
         <div class="headline text-center">
             <div class="content">
-                <div style='font-size:7rem; padding-top: 3%;' >github~search</div> <br> <br>g
+                <div style='font-size:7rem; padding-top: 3%;' >github~search</div> <br> <br>
                 <h1 style="padding-top: 1%;">Find your Github Profile! </h1>
                 <h4>Find Github users and their Repositories.</h4>
             </div>
